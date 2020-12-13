@@ -3,8 +3,27 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
+    <script src="lib/jquery/jquery.min.js"></script>
+    <style>
+        img {
+            width:50%;
+            height:50%;
+            margin:10px;
+            border:1px solid black;
+        }
+    </style>
 </head>
 <body>
     <h1>我的GitHub开源项目</h1>
+    <div id="divDom"></div>
 </body>
 </html>
+<script>
+    $(function () {
+        for (var index = 1; index <= 9; index++) {
+            var str = '<img src="photos/1 (' + index + ').jpg" />';
+            str += '<br>';
+            $("#divDom").append(str);
+        }
+    });
+</script>
