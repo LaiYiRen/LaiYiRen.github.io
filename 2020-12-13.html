@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
+    <script src="lib/jquery/jquery.min.js"></script>
 </head>
 <body>
     <h1>2020-12-13</h1>
@@ -14,5 +15,24 @@
     <p>wwwwww</p>
     <p>wwwwww</p>
     <p>wwwwww</p>
+
+    <h3>
+        <button id="btnDemo">测试一般处理程序能否在github上运行</button>
+    </h3>
+    <h2>当前时间：<span id="spanShowDateTime"></span></h2>
 </body>
 </html>
+<script>
+    $(function () {
+        $("#btnDemo").click(function () {
+            $.get("/HandlerTest.ashx", function (data) {
+                $("#spanShowDateTime").text(data);
+            });
+        });
+        setInterval(function () {
+            $.get("/HandlerTest.ashx", function (data) {
+                $("#spanShowDateTime").text(data);
+            });
+        }, 1000);
+    });
+</script>
